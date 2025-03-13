@@ -19,4 +19,4 @@ services:
         ports:
             - "8080:8080"
 
-        # in adminer: login with server = "postgres_db" and creds.
+        # in adminer: login with server = "postgres" and creds.
