@@ -30,6 +30,7 @@
     - Yes, we use UV for 1) Speed 2) Standard Declarable Formats
 - Docker: https://www.docker.com/ and Docker compose.
 - Git and Github: https://github.com/techboy-coder/starthack25 (please ensure you know how to work with git!)
+    - Make sure you setup your ssh keys and sync it with github
 
 **Languages:**
 - Typescript
