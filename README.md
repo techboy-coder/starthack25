@@ -12,6 +12,7 @@
 **Backend:**
 - Hono: https://hono.dev/
 - Drizzle ORM: https://orm.drizzle.team/
+- FastAPI: https://fastapi.tiangolo.com/
 
 **Services:**
 - Auth/Files/etc..., not sure, but one of the following two:
@@ -28,7 +29,12 @@
 - UV Python: https://docs.astral.sh/uv/
     - Yes, we use UV for 1) Speed 2) Standard Declarable Formats
 - Docker: https://www.docker.com/ and Docker compose.
-- Git and Github: https://github.com/techboy-coder/starthack25
+- Git and Github: https://github.com/techboy-coder/starthack25 (please ensure you know how to work with git!)
+
+**Languages:**
+- Typescript
+- Python
+- configs/etc...
 
 ## Suggested Workflow
 
