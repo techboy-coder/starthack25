@@ -1,8 +1,11 @@
-```
-npm install
-npm run dev
+**Start backend**
+
+```bash
+pnpm install
+pnpm run dev
 ```
 
-```
-open http://localhost:3000
-```
+
+**DB and migrations**
+- Generate migrations: `npx drizzle-kit generate`
+- Apply migrations: `npx drizzle-kit migrate`
