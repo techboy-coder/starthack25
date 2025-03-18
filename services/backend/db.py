@@ -1,5 +1,6 @@
 from databases import Database
 from sqlalchemy import  create_engine, MetaData, Table, Column, Integer, String
+from uuid import uuid4
 
 
 
@@ -16,7 +17,7 @@ UsersTable = Table(
     Column("password", String, nullable=False)
 )
 
-UsersTable = Table(
+ExerciseTable = Table(
     "exercises",
     metadata,
     Column("id", String, nullable=False, primary_key=True),
