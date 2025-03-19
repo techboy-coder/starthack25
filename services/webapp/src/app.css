@@ -23,7 +23,7 @@
 		--border: 220 13% 91%;
 		--input: 220 13% 91%;
 		--ring: 262.1 83.3% 57.8%;
-		--radius: 0.75rem;
+		--radius: 0.5rem;
 	}
 	.dark {
 		--background: 224 71.4% 4.1%;
@@ -56,3 +56,22 @@
 		@apply bg-background text-foreground;
 	}
 }
+
+.debug {
+	border: 1px solid red;
+}
+
+head {
+	background: #000000;
+	overscroll-behavior: none; /* Prevents the overscroll effect */
+}
+
+
+@layer base {
+	* {
+	  @apply border-border;
+	}
+	body {
+	  @apply bg-background text-foreground;
+	}
+  }
