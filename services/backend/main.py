@@ -73,7 +73,10 @@ def flow_score(id: str):
 
     # Compute score
     score_data = filtered_data.with_columns(
-        (pl.col("AbsPower_Fb_W") / pl.col("AbsFlow_Fb_m3s")).alias("score")
+        (pl.when(pl.col("AbsFlow_Fb_m3s") != 0)
+        .then(pl.col("AbsPower_Fb_W") / pl.col("AbsFlow_Fb_m3s"))
+        .otherwise(pl.lit(0)))  # Set zero if flow is zero
+        .alias("score")
     )
     
     # Normalize score to range [0,1]
