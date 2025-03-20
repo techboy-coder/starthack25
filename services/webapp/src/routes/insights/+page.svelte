@@ -12,6 +12,8 @@
 	import * as Alert from '$lib/components/ui/alert/index.js';
 	import * as Sheet from '$lib/components/ui/sheet/index.js';
 	import Button from '$lib/components/ui/button/button.svelte';
+	import { toast } from 'svelte-sonner';
+	import Msgform from './msgform.svelte';
 
 	function getStatusBadgeClass(status: HVACData['status']) {
 		switch (status) {
@@ -51,94 +53,96 @@
 		Stay informed with real-time alerts and actionable insights to optimize your model’s performance
 		instantly.
 	</p>
-	<Tabs.Root value="insights" class="w-full py-6">
-		<Tabs.List>
-			<Tabs.Trigger value="insights">Insights</Tabs.Trigger>
-		</Tabs.List>
-		<Tabs.Content value="insights">
-			<div class="grid w-full grid-cols-1 gap-4 py-6">
-				<Card.Root class="border-2 border-border bg-muted/20 p-6">
-					<Table.Root>
-						<Table.Caption
-							>A list of your recent notifications and actionable insights</Table.Caption
-						>
-						<Table.Header>
-							<Table.Row>
-								<Table.Head class="w-[100px]">ID</Table.Head>
-								<Table.Head class="w-[350px]">Title</Table.Head>
-								<Table.Head class="w-[700px]">Description</Table.Head>
-								<Table.Head>Status</Table.Head>
-								<Table.Head class="">Priority</Table.Head>
-								<Table.Head class="text-right">Details</Table.Head>
-							</Table.Row>
-						</Table.Header>
-						<Table.Body>
-							{#each mockHVACData as item (item.id)}
-								<Table.Row>
-									<Table.Cell class="font-medium">{item.id}</Table.Cell>
-									<Table.Cell>
-										<Badge variant="secondary" class="mr-2">{item.type}</Badge>
-										{item.shortDescription}
-									</Table.Cell>
-									<Table.Cell>{item.details}</Table.Cell>
-									<Table.Cell>
-										<Badge variant="outline" class={getStatusBadgeClass(item.status)}>
-											{item.status}
-										</Badge>
-									</Table.Cell>
-									<Table.Cell class="text-right">
-										<Badge variant="outline" class={getPriorityBadgeClass(item.priority)}>
-											{item.priority}
-										</Badge>
-									</Table.Cell>
-									<Table.Cell>
-										<Sheet.Root>
-											<Sheet.Trigger>
-												<Button
-													variant="outline"
-													class="border-2 border-muted bg-muted/35"
-													size="sm">Details</Button
-												>
-											</Sheet.Trigger>
-											<Sheet.Content class=" dark">
-												<Sheet.Header class=" h-full">
-													<Sheet.Title>
-														{item.type} - {item.shortDescription}
-													</Sheet.Title>
-													<Sheet.Description class="flex flex-col items-start justify-between">
-														<div class="">
-															<div class="py-4">
-																<h4 class="text-base font-medium text-primary">Details</h4>
-																<p class="">
-																	{item.details}
-																</p>
-															</div>
-															<div class="py-4">
-																<h4 class="text-base font-medium text-primary">Description</h4>
-																<p class="">
-																	{item.longDescription}
-																</p>
-															</div>
-														</div>
-														<Alert.Root class="bg-muted/30 text-muted-foreground">
-															<Alert.Title class="pb-2 font-bold text-foreground"
-																>Priority: {item.priority}</Alert.Title
-															>
-															<Alert.Description>
-																{item.cta}
-															</Alert.Description>
-														</Alert.Root>
-													</Sheet.Description>
-												</Sheet.Header>
-											</Sheet.Content>
-										</Sheet.Root>
-									</Table.Cell>
-								</Table.Row>
-							{/each}
-						</Table.Body>
-					</Table.Root>
-				</Card.Root>
-			</div>
-		</Tabs.Content>
-	</Tabs.Root>
+	<div class="grid w-full grid-cols-1 gap-4 py-6">
+		<Card.Root class="border-2 border-border bg-muted/20 p-6">
+			<Table.Root>
+				<Table.Caption>A list of your recent notifications and actionable insights</Table.Caption>
+				<Table.Header>
+					<Table.Row>
+						<Table.Head class="w-[100px]">ID</Table.Head>
+						<Table.Head class="w-[350px]">Title</Table.Head>
+						<Table.Head class="w-[700px]">Description</Table.Head>
+						<Table.Head>Status</Table.Head>
+						<Table.Head class="">Priority</Table.Head>
+						<Table.Head class="text-right">Details</Table.Head>
+					</Table.Row>
+				</Table.Header>
+				<Table.Body>
+					{#each mockHVACData as item (item.id)}
+						<Table.Row>
+							<Table.Cell class="font-medium">{item.id}</Table.Cell>
+							<Table.Cell>
+								<Badge variant="secondary" class="mr-2">{item.type}</Badge>
+								{item.shortDescription}
+							</Table.Cell>
+							<Table.Cell>{item.details}</Table.Cell>
+							<Table.Cell>
+								<Badge variant="outline" class={getStatusBadgeClass(item.status)}>
+									{item.status}
+								</Badge>
+							</Table.Cell>
+							<Table.Cell class="text-right">
+								<Badge variant="outline" class={getPriorityBadgeClass(item.priority)}>
+									{item.priority}
+								</Badge>
+							</Table.Cell>
+							<Table.Cell>
+								<Sheet.Root>
+									<Sheet.Trigger>
+										<Button variant="outline" class="border-2 border-muted bg-muted/35" size="sm"
+											>Details</Button
+										>
+									</Sheet.Trigger>
+									<Sheet.Content class=" dark">
+										<Sheet.Header class=" h-full">
+											<Sheet.Title>
+												{item.type} - {item.shortDescription}
+											</Sheet.Title>
+											<Sheet.Description class=" flex h-full flex-col items-start justify-between">
+												<div class="">
+													<div class="py-4">
+														<h4 class="text-base font-medium text-primary">Details</h4>
+														<p class="">
+															{item.details}
+														</p>
+													</div>
+													<div class="py-4">
+														<h4 class="text-base font-medium text-primary">Description</h4>
+														<p class="">
+															{item.longDescription}
+														</p>
+													</div>
+													<div class="flex flex-col py-4">
+														<h4 class="text-base font-medium text-primary">Have a question?</h4>
+														<p class="pb-4">
+															If you have any questions, please reach out to our support team. You
+															can add a comment below to get in touch with us.
+														</p>
+														<Msgform></Msgform>
+													</div>
+												</div>
+												<Alert.Root class="bg-muted/30 text-muted-foreground">
+													<Alert.Title class="pb-2 font-bold text-foreground"
+														>Priority: <Badge
+															variant="outline"
+															class={getPriorityBadgeClass(item.priority)}
+														>
+															{item.priority}
+														</Badge>
+													</Alert.Title>
+													<Alert.Description>
+														{item.cta}
+													</Alert.Description>
+												</Alert.Root>
+											</Sheet.Description>
+										</Sheet.Header>
+									</Sheet.Content>
+								</Sheet.Root>
+							</Table.Cell>
+						</Table.Row>
+					{/each}
+				</Table.Body>
+			</Table.Root>
+		</Card.Root>
+	</div>
 </div>
