@@ -5,26 +5,20 @@
 <section
 	class="container flex flex-col items-center justify-center space-y-4 pt-40 text-center text-foreground"
 >
-	<h1 class="text-6xl font-bold">
-		ANALYZE COMPARE OPTIMIZE <br />
-		<span class="text-primary">AI-Driven Analysis</span>
-	</h1>
+	<h1 class="text-6xl font-bold">A New Era of Energy Management</h1>
 	<p class="text-2xl text-muted-foreground">
-		Experience the future of HVAC performance monitoring with our cutting-edge
-		<b>Dynamic Performance Dashboard</b> and <b>Smart Alerts & Insights</b> powered by Machine
-		Learning.
-		<br />
-		Maximize efficiency, minimize costs, and predict maintenance needs before failures occur.
+		Leverage our Dynamic Performance Dashboard and AI-powered Smart Alerts & Insights to optimize
+		energy efficiency, reduce costs, and anticipate maintenance needs before failures happen.
 	</p>
 
-	<div class="flex space-x-4 py-4">
-		<Button href="/app/dashboard" variant="default">Try the Dashboard</Button>
-		<Button href="/alerts" variant="outline">Explore Smart Alerts</Button>
+	<div class="flex space-x-4 py-4 font-bold">
+		<Button href="/app/dashboard" variant="default">Get Started</Button>
+		<Button href="/alerts" variant="outline">Contact Us</Button>
 	</div>
 
 	<img
 		src="/appdemo.png"
 		alt="Dynamic Performance Dashboard"
-		class="rounded-lg py-4 ring-2 ring-primary/50"
+		class="rounded-lg shadow-2xl shadow-primary/20 ring-4 ring-primary/50"
 	/>
 </section>

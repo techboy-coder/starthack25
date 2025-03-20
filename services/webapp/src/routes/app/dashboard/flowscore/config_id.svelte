@@ -6,7 +6,6 @@
 	import * as Select from '$lib/components/ui/select/index.js';
 	import { invalidateAll } from '$app/navigation';
 	import { Input } from '$lib/components/ui/input/index.js';
-	import Chooser from './chooser.svelte';
 
 	let ids = IDs;
 </script>
@@ -25,37 +24,31 @@
 				<!-- Choose ID -->
 				<div class="">
 					<h3 class="py-2 font-mono text-lg font-bold">Choose ID</h3>
-					<div class="flex w-full max-w-sm flex-col gap-1.5">
-						<Select.Root type="single" bind:value={currentConfig.chosenId}>
-							<Select.Trigger class="">{currentConfig.chosenId || 'Select ID...'}</Select.Trigger>
-							<Select.Content>
-								{#each ids as id}
-									<Select.Item value={id}>{id}</Select.Item>
-								{/each}
-							</Select.Content>
-						</Select.Root>
-						<p class="text-sm text-muted-foreground">
-							The higher the accuracy, the longer the data takes to load...
-						</p>
-					</div>
+					<Select.Root type="single" bind:value={currentConfig.chosenId}>
+						<Select.Trigger class="">{currentConfig.chosenId || 'Select ID...'}</Select.Trigger>
+						<Select.Content>
+							{#each ids as id}
+								<Select.Item value={id}>{id}</Select.Item>
+							{/each}
+						</Select.Content>
+					</Select.Root>
 				</div>
 
 				<div class="">
 					<!-- Choose Limit -->
-					<h3 class="py-2 font-mono text-lg font-bold">Accuracy</h3>
+					<h3 class="py-2 font-mono text-lg font-bold">Choose Limit</h3>
 
 					<div class="flex w-full max-w-sm flex-col gap-1.5">
 						<Input type="number" id="limit" placeholder="Limit" bind:value={currentConfig.limit} />
 						<p class="text-sm text-muted-foreground">
-							The higher the accuracy, the longer the data takes to load...
+							The larger the limit, the longer the data takes to load
 						</p>
 					</div>
 				</div>
 				<!-- Choose Int Column -->
 				<div class="w-full">
 					<!-- Choose Limit -->
-					<h3 class="py-2 font-mono text-lg font-bold">Choose Metric</h3>
-					<Chooser></Chooser>
+					<h3 class="py-2 font-mono text-lg font-bold">Choose Limit</h3>
 				</div>
 
 				<!-- Choose Int Column -->
@@ -75,8 +68,9 @@
 						</p>
 					</div>
 				</div>
-
-				<Button variant="default" onclick={() => invalidateAll()} class="my-8">Apply</Button>
+				<Sheet.Close>
+					<Button variant="default" onclick={() => invalidateAll()} class="my-8">Apply</Button>
+				</Sheet.Close>
 			</Sheet.Description>
 		</Sheet.Header>
 	</Sheet.Content>

@@ -1,15 +1,13 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-	import Chart from 'chart.js/auto';
 	import type { DataPoints } from '$lib/app/types';
 	let { data }: { data: DataPoints } = $props();
+	import { onMount } from 'svelte';
+	import Chart from 'chart.js/auto';
 	import * as hdate from 'human-date';
 	import { currentConfig } from '$lib/app/state.svelte';
 	import Config from './config.svelte';
 	import { columns } from '$lib/app/constants';
 	import { downsample } from '$lib/app/funcs';
-
-	console.log(data);
 
 	let labels: string[] = data.map((d) => {
 		const formattedDate = String(d.year_month_day).replace(/(\d{4})(\d{2})(\d{2})/, '$1-$2-$3');

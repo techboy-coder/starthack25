@@ -1,5 +1,5 @@
 import { getData } from "./api";
-import type { ColumnMapping, CurrentConfig } from "./types";
+import { type FlowScore, type ColumnMapping, type CurrentConfig } from "./types";
 
 export let IDs = $state([""])
 
@@ -20,3 +20,5 @@ export async function getCurrentData(){
 }
 
 export let colMapping = $state<ColumnMapping>([])
+
+export let fscoredata = $state<FlowScore>([]);

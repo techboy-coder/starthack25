@@ -8,20 +8,17 @@
 <nav
 	class="container sticky top-0 z-10 flex items-center justify-between bg-background/10 py-4 backdrop-blur-lg"
 >
-	<div class="">
-		<a href="/" class="text-lg font-black italic text-foreground transition-colors hover:text-white"
-			>ACO</a
+	<div class="flex items-center space-x-2">
+		<a
+			href="/"
+			class="inline-block text-lg font-black text-foreground transition-colors hover:text-white"
 		>
+			<span class="text-primary">{'> '}</span>{'HEATFLOW'}
+		</a>
 	</div>
 
 	<div class="absolute left-1/2 -translate-x-1/2 transform">
 		<nav class="text-md flex w-full items-center space-x-8">
-			<a
-				href="/about"
-				class="font-medium text-muted-foreground transition-colors hover:text-foreground"
-			>
-				Docs
-			</a>
 			<a
 				href="/app/dashboard"
 				class="font-medium text-muted-foreground transition-colors hover:text-foreground"
@@ -33,6 +30,12 @@
 				class="font-medium text-muted-foreground transition-colors hover:text-foreground"
 			>
 				Insights
+			</a>
+			<a
+				href="/api/docs"
+				class="font-medium text-muted-foreground transition-colors hover:text-foreground"
+			>
+				Documentation
 			</a>
 		</nav>
 	</div>
