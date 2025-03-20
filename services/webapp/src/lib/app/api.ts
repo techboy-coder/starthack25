@@ -1,5 +1,5 @@
 import { BACKEND_URL } from '$lib';
-import type { ColumnMapping, DataPoints, IDs } from './types';
+import type { ColumnMapping, DataPoints, FlowScore, IDs } from './types';
 
 export async function getIds() {
   const response = await fetch(`${BACKEND_URL}/getIds`);
@@ -17,4 +17,12 @@ export async function getColumns() {
     const response = await fetch(`${BACKEND_URL}/columns`);
     let columns: ColumnMapping = await response.json();
     return columns;
+}
+
+// /flow_score/{id}
+
+export async function getFlowScore(id: string) {
+  const response = await fetch(`${BACKEND_URL}/flow_score/${id}`);
+  let flowScore: FlowScore = await response.json();
+  return flowScore;
 }
