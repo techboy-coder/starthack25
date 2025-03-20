@@ -1,0 +1,60 @@
+,id,access,basetype,description,format,name,privacy,restriction,definedBy,unit
+0,evcloud.00009,r,int,Valve Type,application/vnd.belimo.enum;0|1,ValveType,False,uint8,evcloud/1.2,
+1,evcloud.10,r,int,DN Size of Valve,,DN_Size,False,int32,evcloud/1.2,
+2,evcloud.100,r,real,Relative Flow in %,,RelFlow_Fb_Rel2Vmax,False,"[-2147483.648,2147483.647]",evcloud/1.2,percent
+3,evcloud.110,r,real,Absolute Flow in m3/s,,AbsFlow_Fb_m3s,False,"[-2147483.648,2147483.647]",evcloud/1.2,cubicMetrePerSecond
+4,evcloud.120,rw,real,Maximum Power Limit in %,,Pmax_Rel_Write,False,"[0.5,100]",evcloud/1.2,percent
+5,evcloud.130,r,real,Relative Power %,,RelPower_Fb_Rel2Pmax,False,"[-2147483.648,2147483.647]",evcloud/1.2,percent
+6,evcloud.140,r,real,Absolute Power in W,,AbsPower_Fb_W,False,"[-2147483.648,2147483.647]",evcloud/1.2,watt
+7,evcloud.150,r,real,Temperature 1 remote in K,,T1_remote_K,False,"[-2147483.648,2147483.647]",evcloud/1.2,kelvin
+8,evcloud.160,r,real,Temperature 2 embeded in K,,T2_embeded_K,False,"[-2147483.648,2147483.647]",evcloud/1.2,kelvin
+9,evcloud.170,rw,int,Delta T Limitation Type,application/vnd.belimo.enum;1|2|3,DeltaT_Limitation_Write,False,uint8,evcloud/1.2,
+10,evcloud.180,r,real,Applied Setpoint DeltaT in K,,SpDeltaT_applied_K,False,"[-2147483.648,2147483.647]",evcloud/1.2,differentialKelvin
+11,evcloud.190,r,real,Delta Temperature in K,,DeltaT_K,False,"[-2147483.648,2147483.647]",evcloud/1.2,differentialKelvin
+12,evcloud.20,rw,int,Control Mode,application/vnd.belimo.enum;1|2|3,ControlMode_Write,False,int32,evcloud/1.2,
+13,evcloud.200,r,real,Cooling Energy in J,,Cooling_E_J,False,"[-2147483.648,2147483.647]",evcloud/1.2,joule
+14,evcloud.210,r,real,Heating Energy in J,,Heating_E_J,False,"[-2147483.648,2147483.647]",evcloud/1.2,joule
+15,evcloud.220,r,real,Err_State_Cloud_(MSB=FreezeWarn|MP2_nAlive|RevFlow|BPosG|P_Dmd_nReached|V_Dmd_nReached|Airbubbles|Flow_with_closed_Valve|Actuator_Stalled|Flow_Signal_Faulty|T2_Err|LSB=T1_Err),,Error_Status_Cloud,False,"[-2147483.648,2147483.647]",evcloud/1.2,
+16,evcloud.230,r,real,Glycol concentration in %,,Glycol_Concentration_Rel,False,"[-2147483.648,2147483.647]",evcloud/1.2,percent
+17,evcloud.240,rw,real,Setpoint Delta T in K,,SpDeltaT_K_Write,False,"[1,55.556]",evcloud/1.2,differentialKelvin
+18,evcloud.250,rw,real,Setpoint Flow in m3/s at Delta T,,SpFlow_DeltaT_lmin_Write,False,"[0,0.1]",evcloud/1.2,cubicMetrePerSecond
+19,evcloud.251,r,real,Operating Time in h,,OperatingHours,False,"[-2147483.648,2147483.647]",evcloud/1.2,hour
+20,evcloud.252,rw,real,Cloud Live Time in h,,CloudLiveHours,False,"[-2147483.648,2147483.647]",evcloud/1.2,hour
+21,evcloud.30,rw,int,Override Control,application/vnd.belimo.enum;1|2|3|4|5|6|7|8|11,Override_Write,False,int32,evcloud/1.2,
+22,evcloud.40,rw,int,Installation Position,application/vnd.belimo.enum;1|2,InstallationPosition_Write,False,uint8,evcloud/1.2,
+23,evcloud.50,rw,int,Setpoint Source,application/vnd.belimo.enum;1|2,SpSource_Write,False,int32,evcloud/1.2,
+24,evcloud.60,rw,real,Setpoint Relative in %,,DDC_BUS_Sp_Write,False,"[0,100]",evcloud/1.2,percent
+25,evcloud.70,r,real,"Setpoint Analog in Volt, only when Sp_Source=Analog  0-12V",,DDC_Sp_V,False,"[-2147483.648,2147483.647]",evcloud/1.2,volt
+26,evcloud.80,r,real,Relative Position in %,,RelPos_Fb,False,"[-2147483.648,2147483.647]",evcloud/1.2,percent
+27,evcloud.90,rw,real,Maximum Flow Limit in %,,Vmax_Rel_Write,False,"[30,100]",evcloud/1.2,percent
+28,evcloudplus.172,r,real,Upper_Control_Band_4_Flow_Rel_2_Vnom,,Upper_Control_Band_4_Flow,False,"[-2147483.648,2147483.647]",evcloudplus/1.2,
+29,evcloudplus.173,r,real,Lower_Control_Band_4_Flow_Rel_2_Vnom,,Lower_Control_Band_4_Flow,False,"[-2147483.648,2147483.647]",evcloudplus/1.2,
+30,evcloudplus.260,r,real,Operating_Time_h,,Operating_Time_h_Research,False,"[-2147483.648,2147483.647]",evcloudplus/1.2,hour
+31,evcloudplus.261,r,real,Active_Time_h,,Active_Time_h,False,"[-2147483.648,2147483.647]",evcloudplus/1.2,hour
+32,evcloudplus.269,r,real,V_Sp_Rel_2_Vnom,,V_Sp_Rel_2_Vnom,False,"[-2147483.648,2147483.647]",evcloudplus/1.2,percent
+33,evcloudplus.270,r,real,Start_And_Stop_Ratio_Rel,,Start_And_Stop_Ratio_Rel,False,"[-2147483.648,2147483.647]",evcloudplus/1.2,percent
+34,evcloudplus.359,r,real,dT_upper_deadbandLim_K,,dT_upper_dBLim_K,False,"[-2147483.648,2147483.647]",evcloudplus/1.2,differentialKelvin
+35,evcloudplus.36,r,real,RelPos_Sp,,RelPos_Sp,False,"[-2147483.648,2147483.647]",evcloudplus/1.2,percent
+36,evcloudplus.360,r,real,dT_lower_deadBandLim_K,,dT_lower_dBLim_K,False,"[-2147483.648,2147483.647]",evcloudplus/1.2,differentialKelvin
+37,evcloudplus.366,r,int,Sequence_(1=NoDmd|2=Cooling|3=Heating),,Sequence_Ste,False,int32,evcloudplus/1.2,
+38,evcloudplus.37,r,real,DDC_Sp_Rel,,DDC_Sp_Rel,False,"[-2147483.648,2147483.647]",evcloudplus/1.2,percent
+39,evcloudplus.381,r,real,last_copleted_month_average,,dT_avg_last_month_K,False,"[-2147483.648,2147483.647]",evcloudplus/1.2,differentialKelvin
+40,evcloudplus.382,r,real,Flow_Volume_Heating_total_m3,,Flow_Volume_Heating_total_m3,False,"[-2147483.648,2147483.647]",evcloudplus/1.2,cubicMetrePerSecond
+41,evcloudplus.383,r,real,Flow_Volume_Cooling_total_m3,,Flow_Volume_Cooling_total_m3,False,"[-2147483.648,2147483.647]",evcloudplus/1.2,cubicMetrePerSecond
+42,evcloudplus.384,r,real,while_DDC_Sp_greater_0,,Active_dT_Manager_total_h,False,"[-2147483.648,2147483.647]",evcloudplus/1.2,hour
+43,evcloudplus.385,r,real,while_DDC_Sp_greater_0,,Standby_dT_Manager_total_h,False,"[-2147483.648,2147483.647]",evcloudplus/1.2,hour
+44,evcloudplus.42,r,real,V_Fb_Rel_2_Vnom,,V_Fb_Rel_2_Vnom,False,"[-2147483.648,2147483.647]",evcloudplus/1.2,percent
+45,evcloudplus.461,r,real,Flow_Volume_total_m3,,Flow_Volume_total_m3,False,"[-2147483.648,2147483.647]",evcloudplus/1.2,cubicMetre
+46,evcloudplus.462,r,real,moving_average_1h_1updated_value,,dT_movavg_1h1Update_K,False,"[-2147483.648,2147483.647]",evcloudplus/1.2,differentialKelvin
+47,evcloudplus.463,r,real,Amount_of_direction_changes_for_actuator,,Act_Dir_Chngs_Counts,False,"[-2147483.648,2147483.647]",evcloudplus/1.2,
+48,evcloudplus.464,r,real,Amount_of_reaching_end_stops_at_0_and_100_percent,,Act_End_Hit_Counts,False,"[-2147483.648,2147483.647]",evcloudplus/1.2,
+49,evcloudplus.465,r,real,Actutor_cummulated_travel_distance_1_equal_100percent_travel,,Act_total_travel_fraction,False,"[-2147483.648,2147483.647]",evcloudplus/1.2,
+50,evcloudplus.469,r,bool,LoopSim_En_B,,LoopSim_En_B,False,,evcloudplus/1.2,
+51,evcloudplus.470,r,bool,Steady_State_in_Control_B,,Steady_State_B,False,,evcloudplus/1.2,
+52,evcloudplus.511,r,real,while_DDC_Sp_greater_0,,dT_Manager_TurnedOff_total_h,False,"[-2147483.648,2147483.647]",evcloudplus/1.2,hour
+53,evcloudplus.512,r,real,while_DDC_Sp_greater_0,,Full_Load_h,False,"[-2147483.648,2147483.647]",evcloudplus/1.2,hour
+54,evcloudplus.513,r,real,while_DDC_Sp_greater_0,,Part_Load_h,False,"[-2147483.648,2147483.647]",evcloudplus/1.2,hour
+55,evcloudplus.70,r,int,dT_Manager_Ste_(1=disabled|2=dT_selected_not_active|3=dT_selected_active|4=Flow/dT_selected_not_active|5=Flow/dT_selected_active),application/vnd.belimo.enum;1|2|3|4|5,dT_Manager_Ste,False,int32,evcloudplus/1.2,
+56,evcloudplus.85,rw,int,"DN_Selection (2=DN15, 3=DN20, 4=DN25, 5=DN32, 6=DN40, 7=DN50, 8=DN50(AM), 9=DN65, 10=DN80, 11=DN80(EU), 12=DN100, 13=DN125, 14=DN125(EU), 15=DN150, 16=DN65(ANSI250), 17=DN80(ANSI250), 18=DN100(ANSI250), 19=DN125(ANSI250), 20=DN150(ANSI250))",application/vnd.belimo.enum;2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27,DN_Selection_Write,False,uint8,evcloudplus/1.2,
+57,evcloudplus.88,r,real,OpMode_Err_Override_included_(1=Position_Ctrl|2.1=I_Ctrl|2.2=FF_Ctrl|3=Power_Ctrl),,OpMode_Err_Override_included_raw_value,False,"[-2147483.648,2147483.647]",evcloudplus/1.2,
+58,evcloudplus.91,r,bool,Vmin_En_(DDC_Sp=0->Vmin),,Vmin_Ctrl_En_Write,False,,evcloudplus/1.2,
