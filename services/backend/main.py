@@ -15,6 +15,9 @@ metadata.create_all(engine)
 
 dataprofile = pl.read_csv('data/ev3_dataprofile.csv')
 data1000k = pl.read_csv('data/data1000k.csv')
+data1000k = data1000k.drop_nans()
+# sort by sample_time
+data1000k = data1000k.sort("sample_time")
 
 data1000k = data1000k.drop_nans()
 
@@ -60,7 +63,6 @@ def get_columns():
     filtered_data = dataprofile.fillna("")  # Replace NaN with empty string
     return filtered_data.to_dict(orient="records")
 
-# "AbsPower_Fb_W" "AbsFlow_Fb_m3s"
 
 @app.get("/flow_score/{id}")
 def flow_score(id: str):
@@ -85,12 +87,7 @@ def flow_score(id: str):
             ((pl.col("score") - min_val) / (max_val - min_val)).alias("score")
         )
     
-    # Select and return required columns
     return score_data.select(["score", "AbsFlow_Fb_m3s"]).to_dicts()
-
-
-
-
 
 
 
