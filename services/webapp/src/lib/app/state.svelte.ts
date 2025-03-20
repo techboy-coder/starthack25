@@ -9,6 +9,7 @@ export let currentConfig = $state<CurrentConfig>({
     skip: 0,
     graphX: "year_month_day",
     graphY: "AbsPower_Fb_W",
+    amount: 100
 })
 
 

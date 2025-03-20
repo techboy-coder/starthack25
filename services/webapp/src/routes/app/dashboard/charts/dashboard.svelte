@@ -7,6 +7,7 @@
 	import { currentConfig } from '$lib/app/state.svelte';
 	import Config from './config.svelte';
 	import { columns } from '$lib/app/constants';
+	import { downsample } from '$lib/app/funcs';
 
 	console.log(data);
 
@@ -29,14 +30,14 @@
 		chart = new Chart(ctx, {
 			type: 'line',
 			data: {
-				labels,
+				labels: downsample(labels, currentConfig.amount),
 				datasets: [
 					{
 						label: currentConfig.graphY,
-						data: values,
-						borderColor: '#7c3aed',
+						data: downsample(values, currentConfig.amount),
+						borderColor: '#f97316',
 						tension: 0.4,
-						backgroundColor: '#7c3aed22',
+						backgroundColor: '#f9731622',
 						fill: true
 					}
 				]

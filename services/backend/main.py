@@ -7,6 +7,7 @@ from typing import Annotated, List, Optional
 from pydantic import BaseModel
 import pandas as pd
 from fastapi.responses import JSONResponse
+
 from db import *
 
 engine = create_engine(DB_URL)
@@ -15,8 +16,12 @@ metadata.create_all(engine)
 dataprofile = pd.read_csv('data/ev3_dataprofile.csv')
 data1000k = pl.read_csv('data/data1000k.csv')
 
-app = FastAPI()
+data1000k = data1000k.drop_nans()
 
+print("hi")
+print(len(data1000k))
+
+app = FastAPI()
 
 @app.on_event("startup")
 async def startup():
@@ -58,10 +63,6 @@ def get_columns():
     filtered_data = dataprofile.fillna("")  # Replace NaN with empty string
     return filtered_data.to_dict(orient="records")
 
-from fastapi import FastAPI
-import polars as pl
-
-app = FastAPI()
 
 @app.get("/flow_score/{id}")
 def flow_score(id: str):

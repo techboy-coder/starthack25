@@ -208,19 +208,6 @@ export let columns = [
       "unit": ""
     },
     {
-      "Unnamed: 0": 16,
-      "id": "evcloud.230",
-      "access": "r",
-      "basetype": "real",
-      "description": "Glycol concentration in %",
-      "format": "",
-      "name": "Glycol_Concentration_Rel",
-      "privacy": false,
-      "restriction": "[-2147483.648,2147483.647]",
-      "definedBy": "evcloud/1.2",
-      "unit": "percent"
-    },
-    {
       "Unnamed: 0": 17,
       "id": "evcloud.240",
       "access": "rw",

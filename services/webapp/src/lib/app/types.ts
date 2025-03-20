@@ -66,6 +66,7 @@ export type CurrentConfig = {
     limit: number,
     skip: number,
     graphX: string,
-    graphY: string
+    graphY: string,
+    amount: number
 }
 
