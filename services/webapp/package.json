@@ -57,6 +57,7 @@
 	},
 	"dependencies": {
 		"chart.js": "^4.4.8",
+		"hdate": "^1.0.0",
 		"human-date": "^1.4.0",
 		"lucide-svelte": "^0.482.0",
 		"node-fetch": "^3.3.2"
