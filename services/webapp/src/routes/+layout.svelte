@@ -8,7 +8,7 @@
 	<meta name="theme-color" content="#000000" />
 </svelte:head>
 
-<div class="dark bg-background">
+<div class="dark min-h-screen bg-background">
 	<Nav></Nav>
 	{@render children()}
 </div>

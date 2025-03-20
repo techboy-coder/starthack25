@@ -23,16 +23,16 @@
 				Docs
 			</a>
 			<a
-				href="/dashboard"
+				href="/app/dashboard"
 				class="font-medium text-muted-foreground transition-colors hover:text-foreground"
 			>
 				Dashboard
 			</a>
 			<a
-				href="/Smart Alerts & Insights"
+				href="/insights"
 				class="font-medium text-muted-foreground transition-colors hover:text-foreground"
 			>
-				Smart Alerts & Insights
+				Insights
 			</a>
 		</nav>
 	</div>

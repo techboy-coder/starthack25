@@ -5,7 +5,7 @@
 	import Hero from './components/hero.svelte';
 	import Steps from './components/steps.svelte';
 </script>
-hallo
+
 <Hero />
 
 <Benefits />

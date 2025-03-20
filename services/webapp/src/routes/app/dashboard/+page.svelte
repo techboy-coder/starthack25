@@ -1,52 +1,31 @@
-<script>
-	import { Line } from 'svelte-chartjs';
-	const data = {
-		labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-		datasets: [
-			{
-				label: 'My First dataset',
-				fill: true,
-				lineTension: 0.3,
-				backgroundColor: 'rgba(225, 204,230, .3)',
-				borderColor: 'rgb(205, 130, 158)',
-				borderCapStyle: 'butt',
-				borderDash: [],
-				borderDashOffset: 0.0,
-				borderJoinStyle: 'miter',
-				pointBorderColor: 'rgb(205, 130,1 58)',
-				pointBackgroundColor: 'rgb(255, 255, 255)',
-				pointBorderWidth: 10,
-				pointHoverRadius: 5,
-				pointHoverBackgroundColor: 'rgb(0, 0, 0)',
-				pointHoverBorderColor: 'rgba(220, 220, 220,1)',
-				pointHoverBorderWidth: 2,
-				pointRadius: 1,
-				pointHitRadius: 10,
-				data: [65, 59, 80, 81, 56, 55, 40]
-			},
-			{
-				label: 'My Second dataset',
-				fill: true,
-				lineTension: 0.3,
-				backgroundColor: 'rgba(184, 185, 210, .3)',
-				borderColor: 'rgb(35, 26, 136)',
-				borderCapStyle: 'butt',
-				borderDash: [],
-				borderDashOffset: 0.0,
-				borderJoinStyle: 'miter',
-				pointBorderColor: 'rgb(35, 26, 136)',
-				pointBackgroundColor: 'rgb(255, 255, 255)',
-				pointBorderWidth: 10,
-				pointHoverRadius: 5,
-				pointHoverBackgroundColor: 'rgb(0, 0, 0)',
-				pointHoverBorderColor: 'rgba(220, 220, 220, 1)',
-				pointHoverBorderWidth: 2,
-				pointRadius: 1,
-				pointHitRadius: 10,
-				data: [28, 48, 40, 19, 86, 27, 90]
-			}
-		]
-	};
+<script lang="ts">
+	import * as Card from '$lib/components/ui/card';
+	import * as Tabs from '$lib/components/ui/tabs/index.js';
+	import Dashboard from './dashboard.svelte';
 </script>
 
-<Line {data} />
+<div class="container py-20 text-foreground">
+	<h2 class="text-4xl font-bold">Dashboard</h2>
+	<Tabs.Root value="graph" class="w-full py-6">
+		<Tabs.List>
+			<Tabs.Trigger value="table">Data</Tabs.Trigger>
+			<Tabs.Trigger value="graph">Graph</Tabs.Trigger>
+		</Tabs.List>
+		<Tabs.Content value="table">We'll display the tables here...</Tabs.Content>
+		<Tabs.Content value="graph">
+			<div class="grid w-full grid-cols-2 gap-4 py-6">
+				<Card.Root class="border-2 border-border bg-muted/20 p-6">
+					<Dashboard></Dashboard>
+				</Card.Root>
+				<Card.Root class="border-2 border-border bg-muted/20 p-8">
+					<h2 class="text-2xl font-bold">Other Info?</h2>
+					<div class="">
+						<Card.Content class="">
+							<canvas id="lineChart" class=""></canvas>
+						</Card.Content>
+					</div>
+				</Card.Root>
+			</div>
+		</Tabs.Content>
+	</Tabs.Root>
+</div>
