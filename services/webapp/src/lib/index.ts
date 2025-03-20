@@ -1,1 +1,2 @@
-// place files you want to import through the `$lib` alias in this folder.
+// TODO: Change this to the actual backend URL during prod
+export const BACKEND_URL = 'http://localhost:8000';
