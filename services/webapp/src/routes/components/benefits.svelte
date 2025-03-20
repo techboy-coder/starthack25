@@ -7,11 +7,11 @@
 	<div class="flex flex-col justify-center">
 		<div class="flex flex-col gap-y-2">
 			<h3 class="text-lg font-medium text-primary">Benefits</h3>
-			<h2 class="text-3xl font-bold">Your Shortcut to Success</h2>
+			<h2 class="text-3xl font-bold">Smart HVAC Optimization</h2>
 			<p class="text-pretty text-lg text-muted-foreground">
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore officia at sint nostrum,
-				cumque dolorum deleniti perspiciatis sapiente et molestias! Quia voluptatibus exercitationem
-				aliquam, incidunt ut nesciunt quaerat officiis repellendus?
+				Our web app leverages data analysis to enhance HVAC system efficiency,
+				optimize energy use, and reduce maintenance costs through predictive insights. Empowering
+				facility managers, engineers, and investors with a powerful decision-making tool.
 			</p>
 		</div>
 	</div>
@@ -22,12 +22,12 @@
 				<div class="py-2">
 					<AudioWaveform size={32} class="text-primary" />
 				</div>
-				<Card.Title class="">Benefit 1</Card.Title>
+				<Card.Title class="">Predictive Maintenance</Card.Title>
 			</Card.Header>
 			<Card.Content>
 				<p class="text-base text-muted-foreground">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. A odio velit cum aliquam. Natus
-					consectetur dolores.
+					Reduce downtime and repair costs by proactively identifying maintenance needs through 
+					AI-driven anomaly detection and usage pattern analysis.
 				</p>
 			</Card.Content>
 		</Card.Root>
@@ -36,12 +36,12 @@
 				<div class="py-2">
 					<AudioWaveform size={32} class="text-primary" />
 				</div>
-				<Card.Title class="">Benefit 2</Card.Title>
+				<Card.Title class="">Energy Efficiency Optimization</Card.Title>
 			</Card.Header>
 			<Card.Content>
 				<p class="text-base text-muted-foreground">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. A odio velit cum aliquam. Natus
-					consectetur dolores.
+					Optimize energy consumption by providing actionable insights for improved system 
+					performance, lowering operational costs, and enhancing ESG reporting.
 				</p>
 			</Card.Content>
 		</Card.Root>
@@ -50,12 +50,12 @@
 				<div class="py-2">
 					<AudioWaveform size={32} class="text-primary" />
 				</div>
-				<Card.Title class="">Benefit 3</Card.Title>
+				<Card.Title class="">Benchmarking</Card.Title>
 			</Card.Header>
 			<Card.Content>
 				<p class="text-base text-muted-foreground">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. A odio velit cum aliquam. Natus
-					consectetur dolores.
+					Compare HVAC systems based on efficiency, adaptability, and cost-effectiveness to 
+					inform investment and design decisions.
 				</p>
 			</Card.Content>
 		</Card.Root>
@@ -64,12 +64,12 @@
 				<div class="py-2">
 					<AudioWaveform size={32} class="text-primary" />
 				</div>
-				<Card.Title class="">Benefit 4</Card.Title>
+				<Card.Title class="">Scalable Data Integration</Card.Title>
 			</Card.Header>
 			<Card.Content>
 				<p class="text-base text-muted-foreground">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. A odio velit cum aliquam. Natus
-					consectetur dolores.
+					Seamlessly integrates with the Belimo Cloud and third-party APIs, enabling deeper insights 
+					and broader scalability for future upgrades.
 				</p>
 			</Card.Content>
 		</Card.Root>

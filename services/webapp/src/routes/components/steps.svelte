@@ -9,51 +9,50 @@
 	</div>
 	<div class="mx-auto grid max-w-6xl grid-cols-2 gap-8 py-8">
 		<div class="space-y-1 py-4">
-			<Badge variant="default" class="my-2 inline-block">Contribute</Badge>
-			<h3 class="text-xl font-bold">Create an Impact with Every Choice</h3>
+			<Badge variant="default" class="my-2 inline-block">Data Collection</Badge>
+			<h3 class="text-xl font-bold">Gather Real-Time Performance Data</h3>
 			<p class="text-pretty text-muted-foreground">
-				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem fugiat, quasi sint
-				reiciendis quidem iure.
+				Continuously collect HVAC system data via the Belimo Cloud, including energy consumption, temperature control, and operational efficiency.
 			</p>
 		</div>
+		
 		<div class="space-y-1 py-4">
-			<Badge variant="default" class="my-2 inline-block">Discover</Badge>
-			<h3 class="text-xl font-bold">Make a Difference with Every Contribution</h3>
+			<Badge variant="default" class="my-2 inline-block">Data Processing</Badge>
+			<h3 class="text-xl font-bold">Process & Analyze Collected Data</h3>
 			<p class="text-pretty text-muted-foreground">
-				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem fugiat, quasi sint
-				reiciendis quidem iure.
+				Utilize Apache Spark and Delta Sharing to process large-scale time series data for meaningful insights and efficiency benchmarking.
 			</p>
 		</div>
+		
 		<div class="space-y-1 py-4">
-			<Badge variant="default" class="my-2 inline-block">Innovate</Badge>
-			<h3 class="text-xl font-bold">Make Every Action Count</h3>
+			<Badge variant="default" class="my-2 inline-block">Machine Learning</Badge>
+			<h3 class="text-xl font-bold">Identify Patterns & Predict Failures</h3>
 			<p class="text-pretty text-muted-foreground">
-				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem fugiat, quasi sint
-				reiciendis quidem iure.
+				Apply advanced ML algorithms to detect anomalies, predict maintenance needs, and enhance performance accuracy over time.
 			</p>
 		</div>
+		
 		<div class="space-y-1 py-4">
-			<Badge variant="default" class="my-2 inline-block">Collaborate</Badge>
-			<h3 class="text-xl font-bold">Tackle this challenge together</h3>
+			<Badge variant="default" class="my-2 inline-block">Dynamic Dashboard</Badge>
+			<h3 class="text-xl font-bold">Visualize Performance Metrics</h3>
 			<p class="text-pretty text-muted-foreground">
-				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem fugiat, quasi sint
-				reiciendis quidem iure.
+				Access a user-friendly dashboard displaying real-time performance metrics, predictive alerts, and suggested optimizations.
 			</p>
 		</div>
+		
 		<div class="space-y-1 py-4">
-			<Badge variant="default" class="my-2 inline-block">Pioneer</Badge>
-			<h3 class="text-xl font-bold">Lead the industry forward</h3>
+			<Badge variant="default" class="my-2 inline-block">Smart Alerts</Badge>
+			<h3 class="text-xl font-bold">Receive Proactive Notifications</h3>
 			<p class="text-pretty text-muted-foreground">
-				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem fugiat, quasi sint
-				reiciendis quidem iure.
+				Get notified of potential issues before they become critical, ensuring smooth and efficient operation of HVAC systems.
 			</p>
 		</div>
+		
 		<div class="space-y-1 py-4">
-			<Badge variant="default" class="my-2 inline-block">Distribute</Badge>
-			<h3 class="text-xl font-bold">Ship and distribute your product</h3>
+			<Badge variant="default" class="my-2 inline-block">Continuous Improvement</Badge>
+			<h3 class="text-xl font-bold">Refine & Scale</h3>
 			<p class="text-pretty text-muted-foreground">
-				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem fugiat, quasi sint
-				reiciendis quidem iure.
+				Leverage collected data to enhance ML models, improve efficiency scores, and expand integrations with third-party systems.
 			</p>
 		</div>
 	</div>

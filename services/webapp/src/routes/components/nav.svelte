@@ -10,7 +10,7 @@
 >
 	<div class="">
 		<a href="/" class="text-lg font-black italic text-foreground transition-colors hover:text-white"
-			>ETHACK</a
+			>ACO</a
 		>
 	</div>
 
@@ -29,10 +29,10 @@
 				Dashboard
 			</a>
 			<a
-				href="/product"
+				href="/Smart Alerts & Insights"
 				class="font-medium text-muted-foreground transition-colors hover:text-foreground"
 			>
-				Product
+				Smart Alerts & Insights
 			</a>
 		</nav>
 	</div>
