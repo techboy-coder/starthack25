@@ -12,7 +12,7 @@ from db import *
 engine = create_engine(DB_URL)
 metadata.create_all(engine)
 
-dataprofile = pd.read_csv('data/ev3_dataprofile.csv')
+dataprofile = pl.read_csv('data/ev3_dataprofile.csv')
 data1000k = pl.read_csv('data/data1000k.csv')
 
 app = FastAPI()
@@ -31,14 +31,11 @@ async def shutdown():
 @app.get("/getIds")
 def get_ids():
     ids = data1000k.select('device_id').unique().to_series().to_list()
-    print("penis")
     return ids
 
 
 @app.get("/get")
 def get_data(id: str, limit: int = 10, skip: int = 0):
-    # Read CSV file using Polars
-    
     
     # Filter data by 'device_id' column
     filtered_data = data1000k.filter(pl.col('device_id') == id)
@@ -58,34 +55,36 @@ def get_columns():
     filtered_data = dataprofile.fillna("")  # Replace NaN with empty string
     return filtered_data.to_dict(orient="records")
 
-from fastapi import FastAPI
-import polars as pl
-
-app = FastAPI()
+# "AbsPower_Fb_W" "AbsFlow_Fb_m3s"
 
 @app.get("/flow_score/{id}")
 def flow_score(id: str):
     filtered_data = data1000k.filter(pl.col("device_id") == id)
+    
+    if filtered_data.is_empty():
+        return []  # Return empty list if no data is found
 
-    # Avoid division by zero
-    filtered_data = filtered_data.with_columns(
-        pl.when(pl.col("AbsPower_Fb_W") > 0)
-        .then(pl.col("AbsFlow_Fb_m3s") / pl.col("AbsPower_Fb_W"))
-        .otherwise(0)
-        .alias("FlowPowerRatio")
+    # Compute score
+    score_data = filtered_data.with_columns(
+        (pl.col("AbsPower_Fb_W") / pl.col("AbsFlow_Fb_m3s")).alias("score")
     )
-
-    # Find max ratio (avoid NaN if there are no valid values)
-    max_ratio = filtered_data["FlowPowerRatio"].max()
-    if max_ratio == 0:
-        filtered_data = filtered_data.with_columns(pl.lit(0).alias("Score"))
+    
+    # Normalize score to range [0,1]
+    min_val = score_data["score"].min()
+    max_val = score_data["score"].max()
+    
+    if min_val == max_val:
+        score_data = score_data.with_columns(pl.lit(1.0).alias("score"))  # Avoid division by zero
     else:
-        filtered_data = filtered_data.with_columns(
-            (pl.col("FlowPowerRatio") / max_ratio).alias("Score")
+        score_data = score_data.with_columns(
+            ((pl.col("score") - min_val) / (max_val - min_val)).alias("score")
         )
+    
+    # Select and return required columns
+    return score_data.select(["score", "AbsFlow_Fb_m3s"]).to_dicts()
 
-    result = filtered_data.select(["Score"]).to_dicts()
-    return result
+
+
 
 
 
