@@ -1,4 +1,4 @@
-import { getData, getIds } from '$lib/app/api';
+import { getData, getFlowScore, getIds } from '$lib/app/api';
 import { currentConfig, IDs } from '$lib/app/state.svelte';
 import type { PageLoad } from './$types';
 
@@ -9,6 +9,7 @@ export const load = (async () => {
         currentConfig.chosenId = IDs[0];
     }
     return {
-        data: getData(currentConfig.chosenId, currentConfig.limit, currentConfig.skip)
+        datapoint: getData(currentConfig.chosenId, currentConfig.limit, currentConfig.skip),
+        flowscore: getFlowScore(currentConfig.chosenId),
     };
 }) satisfies PageLoad;
