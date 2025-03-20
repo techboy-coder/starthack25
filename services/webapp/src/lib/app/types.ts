@@ -70,3 +70,7 @@ export type CurrentConfig = {
     amount: number
 }
 
+export type FlowScore = {
+    score: number,
+    AbsFlow_Fb_m3s: number
+}[]
