@@ -10,6 +10,9 @@ export default defineConfig({
 				changeOrigin: true,
 				rewrite: (path) => path.replace(/^\/api/, '')
 			}
-		}
+		},
+	},
+	preview: {
+		allowedHosts: ["ethack.vsos.ethz.ch", "optiview.shivi.io"] // Add the new host here
 	}
 });

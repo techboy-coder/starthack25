@@ -10,17 +10,9 @@ from typing import List
 from pydantic import BaseModel
 from fastapi.responses import JSONResponse
 
-
 import ollama
 import polars as pl
 from typing import List
-# from sqlalchemy import create_engine
-
-# Assuming you have db.py with DB_URL, metadata
-from db import *  # Import necessary components from your db.py
-
-# engine = create_engine(DB_URL)
-# metadata.create_all(engine)
 
 dataprofile = pl.read_csv('data/ev3_dataprofile.csv')
 data1000k = pl.read_csv('data/data1000k.csv')
@@ -68,13 +60,8 @@ app = FastAPI(root_path="/api")
 
 @app.on_event("startup")
 async def startup():
-    await database.connect()
     if os.path.exists('tmp/') and os.path.isdir('tmp/'):
         os.rmdir("tmp/")
-
-@app.on_event("shutdown")
-async def shutdown():
-    await database.disconnect()
 
 @app.get("/getIds")
 def get_ids():
