@@ -8,9 +8,10 @@
 	import Dashboard from './charts/dashboard.svelte';
 	import Flowscore from './flowscore/flowscore.svelte';
 	import { Badge } from '$lib/components/ui/badge/index.js';
+	import Llm from './llm.svelte';
 </script>
 
-<div class="container py-20 text-foreground">
+<div class="container pt-20 text-foreground">
 	<h2 class="text-4xl font-bold">Dynamic Performance Dashboard</h2>
 	<p class="pt-4 text-lg text-muted-foreground">
 		Welcome to the Dynamic Performance Dashboard. Here you can view the performance of your model in
@@ -50,7 +51,7 @@
 									</Table.Cell>
 									<Table.Cell>Cooling Tower</Table.Cell>
 									<Table.Cell>Energy savings you can see</Table.Cell>
-									<Table.Cell class="text-right">1324 CHF</Table.Cell>
+									<Table.Cell class="text-nowrap text-right"><span>1324 CHF</span></Table.Cell>
 								</Table.Row>
 								<Table.Row>
 									<Table.Cell class="font-medium">
@@ -58,7 +59,7 @@
 									</Table.Cell>
 									<Table.Cell>Fire & smoke solutions</Table.Cell>
 									<Table.Cell>Technology that saves lives</Table.Cell>
-									<Table.Cell class="text-right">565 CHF</Table.Cell>
+									<Table.Cell class="text-nowrap text-right"><span>565 CHF</span></Table.Cell>
 								</Table.Row>
 								<Table.Row>
 									<Table.Cell class="font-medium">
@@ -66,7 +67,7 @@
 									</Table.Cell>
 									<Table.Cell>Heat Plant</Table.Cell>
 									<Table.Cell>Heating system for maximum efficiency</Table.Cell>
-									<Table.Cell class="text-right">795 CHF</Table.Cell>
+									<Table.Cell class="text-nowrap text-right"><span>795 CHF</span></Table.Cell>
 								</Table.Row>
 								<Table.Row>
 									<Table.Cell class="font-medium">
@@ -74,12 +75,20 @@
 									</Table.Cell>
 									<Table.Cell>Fire & smoke solutions</Table.Cell>
 									<Table.Cell>Technology that saves lives</Table.Cell>
-									<Table.Cell class="text-right">565 CHF</Table.Cell>
+									<Table.Cell class="text-nowrap text-right"><span>565 CHF</span></Table.Cell>
+								</Table.Row>
+								<Table.Row>
+									<Table.Cell class="font-medium">
+										<Badge variant="outline" class="bg-yellow-600">Maintenance</Badge>
+									</Table.Cell>
+									<Table.Cell>Solar Panel Array</Table.Cell>
+									<Table.Cell>Harnessing the power of the sun</Table.Cell>
+									<Table.Cell class="text-nowrap text-right"><span>2150 CHF</span></Table.Cell>
 								</Table.Row>
 							</Table.Body>
 						</Table.Root>
 					</Card.Root>
-					<Card.Root class="border-2 border-border bg-muted/20 p-6">abc</Card.Root>
+					<Llm></Llm>
 				</div>
 			</div>
 		</Tabs.Content>

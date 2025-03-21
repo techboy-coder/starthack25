@@ -12,8 +12,8 @@
 	</p>
 
 	<div class="flex space-x-4 py-4 font-bold">
-		<Button href="/app/dashboard" variant="default">Get Started</Button>
-		<Button href="/alerts" variant="outline">Contact Us</Button>
+		<Button href="/dashboard" variant="default">Get Started</Button>
+		<Button href="/contact" variant="outline">Contact Us</Button>
 	</div>
 
 	<img

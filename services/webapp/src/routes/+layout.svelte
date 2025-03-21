@@ -3,6 +3,7 @@
 	import Nav from './components/nav.svelte';
 	let { children } = $props();
 	import { Toaster } from '$lib/components/ui/sonner/index.js';
+	import Footer from './components/footer.svelte';
 </script>
 
 <svelte:head>
@@ -14,4 +15,5 @@
 <div class="dark min-h-screen bg-background">
 	<Nav></Nav>
 	{@render children()}
+	<Footer />
 </div>

@@ -47,19 +47,19 @@
 	}
 </script>
 
-<div class="container py-20 text-foreground">
+<div class="container pt-20 text-foreground">
 	<h2 class="text-4xl font-bold">Smart Insights</h2>
 	<p class="pt-4 text-lg text-muted-foreground">
 		Stay informed with real-time alerts and actionable insights to optimize your model’s performance
 		instantly.
 	</p>
-	<div class="grid w-full grid-cols-1 gap-4 py-6">
+	<div class="grid w-full grid-cols-1 gap-4 py-8">
 		<Card.Root class="border-2 border-border bg-muted/20 p-6">
 			<Table.Root>
 				<Table.Caption>A list of your recent notifications and actionable insights</Table.Caption>
 				<Table.Header>
 					<Table.Row>
-						<Table.Head class="w-[100px]">ID</Table.Head>
+						<Table.Head class="w-[150px]">ID</Table.Head>
 						<Table.Head class="w-[350px]">Title</Table.Head>
 						<Table.Head class="w-[700px]">Description</Table.Head>
 						<Table.Head>Status</Table.Head>

@@ -19,5 +19,3 @@
 <Steps />
 
 <Faq />
-
-<Footer />
