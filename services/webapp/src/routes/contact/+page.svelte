@@ -30,7 +30,7 @@ o:::::::::::::::o p::::::::::::::::p       tt::::::::::::::ti::::::i        v:::
 	`;
 </script>
 
-<section class="container py-16 pt-40 text-foreground">
+<section class="container pt-36 text-foreground">
 	<div class="flex flex-col justify-center">
 		<div class="flex flex-col gap-y-2">
 			<h3 class="text-lg font-medium text-primary">Hi there</h3>
@@ -44,10 +44,8 @@ o:::::::::::::::o p::::::::::::::::p       tt::::::::::::::ti::::::i        v:::
 				- Yours, truly, Mika, Yan, Parthiv and Shivram
 			</p>
 		</div>
-		<div class="flex flex-col gap-y-2">
 			<pre class="font-mono text-xs font-bold text-muted-foreground">
 				{figlet}
 			</pre>
-		</div>
 	</div>
 </section>

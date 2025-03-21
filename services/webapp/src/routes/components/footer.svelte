@@ -1,7 +1,7 @@
 <script lang="ts">
 </script>
 
-<section class="container py-16 pt-40 text-foreground">
+<section class="container py-8 pt-36 text-foreground">
 	<div class="items-center justify-between md:flex">
 		<div class="font-bold max-md:text-center">
 			<span class="text-primary">{'> '}</span>{'OPTIVIEW'}
