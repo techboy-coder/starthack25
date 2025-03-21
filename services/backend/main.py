@@ -4,25 +4,23 @@ from pydantic import BaseModel
 from typing import List
 from fastapi import FastAPI
 import uvicorn
-from uuid import uuid4
 import os
 import polars as pl
-from typing import Annotated, List, Optional
+from typing import List
 from pydantic import BaseModel
-import pandas as pd
 from fastapi.responses import JSONResponse
 
 
 import ollama
 import polars as pl
 from typing import List
-from sqlalchemy import create_engine
+# from sqlalchemy import create_engine
 
 # Assuming you have db.py with DB_URL, metadata
 from db import *  # Import necessary components from your db.py
 
-engine = create_engine(DB_URL)
-metadata.create_all(engine)
+# engine = create_engine(DB_URL)
+# metadata.create_all(engine)
 
 dataprofile = pl.read_csv('data/ev3_dataprofile.csv')
 data1000k = pl.read_csv('data/data1000k.csv')
