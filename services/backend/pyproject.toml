@@ -10,6 +10,7 @@ dependencies = [
 	"fastapi[standard]>=0.115.11",
 	"ipykernel>=6.29.5",
 	"matplotlib>=3.10.1",
+	"ollama>=0.4.7",
 	"pandas>=2.2.3",
 	"polars>=1.25.2",
 	"psycopg2>=2.9.10",

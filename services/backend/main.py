@@ -1,3 +1,7 @@
+
+
+from pydantic import BaseModel
+from typing import List
 from fastapi import FastAPI
 import uvicorn
 from uuid import uuid4
@@ -8,7 +12,14 @@ from pydantic import BaseModel
 import pandas as pd
 from fastapi.responses import JSONResponse
 
-from db import *
+
+import ollama
+import polars as pl
+from typing import List
+from sqlalchemy import create_engine
+
+# Assuming you have db.py with DB_URL, metadata
+from db import *  # Import necessary components from your db.py
 
 engine = create_engine(DB_URL)
 metadata.create_all(engine)
@@ -21,10 +32,41 @@ data1000k = data1000k.sort("sample_time")
 
 data1000k = data1000k.drop_nans()
 
-print("hi")
-print(len(data1000k))
 
-app = FastAPI()
+SYSTEM_PROMPT = """
+You are an expert in HVAC systems and digital asset monetization, representing Belimo. You are given a X and Y downsampled dataset along with an ID descr. Return some sort of data driven meaning. You are expert and therefore always answer a conclusive answer, you may make it up too. Keep the answer brief and below 4 sentences. Do not say the data from X or Y or downsampled, just say from the data...
+"""
+
+# Py constant for Ollama serve endpoint
+OLLAMA_HOST = "http://localhost:11434"  # Default Ollama port
+
+# Initialize the Ollama client using the constant
+client = ollama.Client(host=OLLAMA_HOST)
+
+
+def askTechRep(query: str, X: List[float], Y: List[str], descriptions: List[str]) -> str:
+    messages = [
+        {
+            "role": "system",
+            "content": SYSTEM_PROMPT,
+        },
+        {
+            "role": "user",
+            "content": query,
+            # Include the data directly in the message content.  This is the most robust way
+            # to make sure it is available to the model.
+            "context": f"X data: {X}\nY data: {Y}\nDescriptions: {descriptions}",
+        },
+    ]
+
+    response: ollama.ChatResponse = client.chat(model="llama3.2:1b", messages=messages, stream=False)  #Use a suitable default model here.
+    return response.message["content"]
+
+
+
+
+# or access fields directly from the response object
+app = FastAPI(root_path="/api")
 
 @app.on_event("startup")
 async def startup():
@@ -94,20 +136,45 @@ def flow_score(id: str):
 
 
 
+# export async function ask(query: string, X: number[], Y: string[], descriptions: string[]) {
+#   const response = await fetch(`${BACKEND_URL}/ask?query=${query}`, {
+#     method: 'POST',
+#     headers: {
+#       'Content-Type': 'application/json'
+#     },
+#     body: JSON.stringify({X, Y, descriptions})
+#   });
+#   let result: { response: string } = await response.json();
+#   return result;
+# }
 
-# sample code
 
-class Exercise(BaseModel):
-    id: str
-    exercise: str
-    description: str
+class AskRequest(BaseModel):
+    query: str
+    X: List[float]
+    Y: List[str]
+    descriptions: List[str]
 
 
-@app.post("/add_exercise")
-async def add_exercise(exercise: Exercise):
-    await database.execute(Exercisedata1000k.insert(), {'id': str(uuid4()), 'exercise': exercise.exercise, 'description': exercise.description})
-    return "worked"
+@app.post("/ask")
+def ask(request: AskRequest):
+    # Access the parameters from the request object
+    query = request.query
+    X = request.X
+    Y = request.Y
+    descriptions = request.descriptions
+    
+    print(f"Received query: {query} and {descriptions}")
+    # Call the external function with the extracted parameters
+    response = askTechRep(query, X, Y, descriptions)
 
+    print(f"Response: {response}")
+    
+    return JSONResponse(content={"response": response})
+
+@app.get(app.root_path + "/openapi.json")
+def custom_swagger_ui_html():
+    return app.openapi()
 
 if __name__ == '__main__':
     uvicorn.run(app, host="127.0.0.1", port=8000)
