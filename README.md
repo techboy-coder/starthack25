@@ -4,6 +4,9 @@
 
 Developed during [STARTHack 25](https://www.startglobal.org/start-hack/home/) (March 19-21, 2025) in St. Gallen, Switzerland. Optiview transforms raw HVAC operational data from Belimo Cloud into actionable business intelligence and predictive maintenance insights.
 
+<img width="1200" height="679" alt="image" src="https://github.com/user-attachments/assets/7a1d7f8c-a820-4bbb-936c-45984e41e014" />
+
+
 ## 🎯 Project Overview
 
 Belimo's smart HVAC devices generate extensive data streams (flow rates, temperatures, power consumption) that often remain underutilized. Our platform connects to Belimo Cloud via Delta Sharing, processes time-series data with Apache Spark, and delivers:
