@@ -1,52 +1,70 @@
-# Starthack 25
+# Optiview - STARTHack 25
 
-**Repo:** https://github.com/techboy-coder/starthack25
+**Smart HVAC Analytics for Belimo Cloud Data**
 
-## Techstack
+Developed during [STARTHack 25](https://www.startglobal.org/start-hack/home/) (March 19-21, 2025) in St. Gallen, Switzerland. Optiview transforms raw HVAC operational data from Belimo Cloud into actionable business intelligence and predictive maintenance insights.
 
-**Frontend:**
-- Svelte and Sveltekit: https://svelte.dev/docs
-- TailwindCss: https://tailwindcss.com/
-- Shadcn Component Lib: https://www.shadcn-svelte.com/
+## 🎯 Project Overview
 
-**Backend:**
-- Hono: https://hono.dev/
-- Drizzle ORM: https://orm.drizzle.team/
-- FastAPI: https://fastapi.tiangolo.com/
+Belimo's smart HVAC devices generate extensive data streams (flow rates, temperatures, power consumption) that often remain underutilized. Our platform connects to Belimo Cloud via Delta Sharing, processes time-series data with Apache Spark, and delivers:
 
-**Services:**
-- Auth/Files/etc..., not sure, but one of the following two:
-    - Pocketbase: https://pocketbase.io/
-    - Supabase: https://supabase.com/
-- DB: See docker-compose file
-    - Postgresql
-    - Adminer: To look into postgres...
+- **Dynamic Performance Dashboard**: Real-time HVAC metrics and energy usage visualization
+- **Smart Alerts & Predictive Maintenance**: Early warnings for equipment anomalies and potential failures  
+- **Energy Optimization**: Data-driven recommendations to reduce consumption and costs
 
-## Tools Required
+## 🛠 Tech Stack
 
-- Node: https://nodejs.org/en and NPM: https://www.npmjs.com/
-- Pnpm: https://pnpm.io/
-- UV Python: https://docs.astral.sh/uv/
-    - Yes, we use UV for 1) Speed 2) Standard Declarable Formats
-- Docker: https://www.docker.com/ and Docker compose.
-- Git and Github: https://github.com/techboy-coder/starthack25 (please ensure you know how to work with git!)
-    - Make sure you setup your ssh keys and sync it with github
+### Frontend
+- **[Svelte/SvelteKit](https://svelte.dev/docs)** - Modern web framework
+- **[TailwindCSS](https://tailwindcss.com/)** - Utility-first CSS
+- **[Shadcn-Svelte](https://www.shadcn-svelte.com/)** - Component library
 
-**Languages:**
-- Typescript
-- Python
-- configs/etc...
+### Backend
+- **[Hono](https://hono.dev/)** - Fast web framework
+- **[FastAPI](https://fastapi.tiangolo.com/)** - Python API framework
+- **[Drizzle ORM](https://orm.drizzle.team/)** - TypeScript ORM
 
-## Suggested Workflow
+### Database & Services
+- **PostgreSQL** - Primary database
+- **[Supabase](https://supabase.com/)** - Backend services (auth, storage)
+- **Apache Spark** - Large-scale data processing
+- **Delta Sharing** - Belimo Cloud integration
 
-1. Idea
-    - What problem do we wanna tackle?
-    - How do we wanna provide value?
-    - Customerbase? Business model?
-    - What functionality does our webapp offer?
-2. High level architecture
-    - Specify interface contract
-    - Specify pages and components
-    - Specify ownership of parts in our system
-3. Build :D
+## 🚀 Quick Start
 
+### Prerequisites
+- **[Node.js](https://nodejs.org/)** & **[pnpm](https://pnpm.io/)**
+- **[uv](https://docs.astral.sh/uv/)** (Python package manager)
+- **[Docker](https://www.docker.com/)** & Docker Compose
+- **Git** with SSH keys configured
+
+### Setup
+```
+# Clone repository
+git clone git@github.com:techboy-coder/starthack25.git
+cd starthack25
+
+# Install dependencies
+pnpm install
+uv sync
+
+# Start services
+docker-compose up -d
+
+# Start development servers
+pnpm dev
+```
+
+## 👥 Team
+
+- **Mika Schoch**
+- **Yan Kleiner**
+- **Parthiv Kangsabanik**
+
+## 🏆 Hackathon Achievement
+
+Successfully addressed the Belimo challenge at STARTHack 25, demonstrating how data assets can be transformed into powerful energy optimization tools and new revenue streams.
+
+---
+
+*Built with ❤️ at Europe's most entrepreneurial hackathon*
